@@ -1,16 +1,3 @@
-"""
-Create a 12x15' map of the Lima Bean 
-
-Per Glen Langston's recommendations, I should:
-    1. not use refs for each scan (because the pipeline doesn't use them)
-    2. use "Track" to observe offs
-    3. do pointing scans as normal; break up map into 2 sub-maps
-
-Following pipeline recommendations:
-https://safe.nrao.edu/wiki/bin/view/Kbandfpa/ObserverGuide?sortcol=table;up=#Reduction_Execute_Pipeline_with
-"""
-
-
 cat = Catalog("/users/aginsbur/GBT15B-129/gc.astrid")
 
 Configure("/users/aginsbur/GBT15B-129/H2CO_6cm_CSetup.py")
@@ -38,3 +25,4 @@ DecLatMap('DustRidgeCenter',     #center of map
     scanDuration = 60,
     beamName="1")
 
+# TODO: add reference scans.  I think they are helpful for improving data quality.  Unclear whether they'll add too much overhead...
