@@ -15,22 +15,24 @@ cat = Catalog("/users/aginsbur/GBT15B-129/gc.astrid")
 
 Configure("/users/aginsbur/GBT15B-129/H2CO_6cm_CSetup.py")
 
-Slew("LimaBean")
+Slew("DustRidgeCenter")
 AutoPeakFocus( frequency=4829., beamName="1" )
 Break("Check pointing/focus")
 Configure("/users/aginsbur/GBT15B-129/H2CO_6cm_CSetup.py")
 
-Slew("LimaBean")
+Slew("DustRidgeCenter")
 Balance()
 
 amintodeg = 1/60.
 scanrate = 3. # arcmin/min
 
-# horizontal scans
-RALongMap('LimaBean',     #center of map
-    hLength = Offset("Galactic",15*amintodeg,0.0,cosv=True), 
-    vLength = Offset("Galactic",0.0,12*amintodeg,cosv=True), 
-    vDelta  = Offset("Galactic",0.0,1.*amintodeg,cosv=True), 
-    scanDuration = 15/scanrate * 60,
-    beamName="1")
+glon_length = 1800 # arcsec
+glat_length = 720 # arcsec
 
+# horizontal scans
+RALongMap('DustRidgeCenter',     #center of map
+    hLength = Offset("Galactic", glon_length*asectodeg, 0.0,cosv=True), 
+    vLength = Offset("Galactic", 0.0, glat_length*asectodeg, cosv=True), 
+    vDelta  = Offset("Galactic",0.0,1.*amintodeg,cosv=True), 
+    scanDuration = 60,
+    beamName="1")
