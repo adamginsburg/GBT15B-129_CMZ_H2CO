@@ -11,14 +11,14 @@ https://safe.nrao.edu/wiki/bin/view/Kbandfpa/ObserverGuide?sortcol=table;up=#Red
 """
 
 
-cat = Catalog("/users/aginsbur/GBT12B-221/limabean.astrid")
+cat = Catalog("/users/aginsbur/GBT15B-129/gc.astrid")
 
-Configure("/users/aginsbur/GBT12B-221/H2CO_6cm_CSetup.py")
+Configure("/users/aginsbur/GBT15B-129/H2CO_6cm_CSetup.py")
 
 Slew("LimaBean")
 AutoPeakFocus( frequency=4829., beamName="1" )
 Break("Check pointing/focus")
-Configure("/users/aginsbur/GBT12B-221/H2CO_6cm_CSetup.py")
+Configure("/users/aginsbur/GBT15B-129/H2CO_6cm_CSetup.py")
 
 Slew("LimaBean")
 Balance()
